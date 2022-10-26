@@ -1,0 +1,85 @@
+{
+    "swagger": "2.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Swagger testing for Generate Pdf",
+      "description": "This is assignment of Generate Excel Sheet done by vaneet kumar",
+      "contact": { "email": "vaneet.k@applify.co" },
+      "license": {
+        "name": "",
+        "url": ""
+      }
+    },
+    "schemes": ["http", "https"],
+    "tags": {
+      "name": "User Add",
+      "description": "users api"
+    },
+    "paths": {
+      "/user/add": {
+        "post": {
+          "summary": "User Add",
+          "tags": ["User Add"],
+          "content": ["application/json"],
+          "parameters": [
+            {
+              "name": "name",
+              "in": "formData",
+              "description": "enter name",
+              "required": "true",
+              "type": "string"
+            },
+            {
+              "name": "age",
+              "in": "formData",
+              "description": "Enter age",
+              "required": "true",
+              "type": "number"
+            },
+            {
+              "name": "gender",
+              "in": "formData",
+              "description": "Enter a gender",
+              
+              "required": "true",
+              "type": "string"
+            },
+            {
+              "name": "address",
+              "in": "formData",
+              "description": "Enter address",
+              "required": "true",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Add Successfull",
+              "schema": {
+                "type": "object"
+              }
+            },
+            "405": {
+              "description": "Invalid input"
+            }
+          }
+        }
+      },
+      "/user/get":{
+          "get": {
+              "summary": "All User detail",
+              "tags": ["All user"],
+               "content": ["application/json"],
+              "responses": {
+                "200": {
+                  "description": "success",
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+      }
+    }
+  }
+  
