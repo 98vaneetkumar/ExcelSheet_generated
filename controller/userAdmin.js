@@ -43,10 +43,18 @@ module.exports = {
       worksheet.getRow(1).eachCell((cell) => {
         cell.font = { bold: true };
       });
-      const data = await workbook.xlsx.writeFile("user.xlsx");
-      return {
-        status:"Done"
-      }
+      //This is download file on location where our code file location and not show on chorme at time of download
+      // const data = await workbook.xlsx.writeFile("user.xlsx");
+
+      //It is download our file on chrome and store in download location in my files
+      res.setHeader(
+        "Content-Type",
+        "application/vnd.openxmlfomats.officedocument.spreadsheatml.sheet"
+      );
+      res.setHeader("Content-Disposition",`attachment; filename=user.xlsx`);
+    return workbook.xlsx.write(res).then(()=>{
+      res.status(200)
+    })
     }
     else{ 
       return{

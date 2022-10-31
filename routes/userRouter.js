@@ -12,5 +12,6 @@ res.json(user)
 router.get("/gets",async(req,res)=>{
     let user= await Controller.userController.gets(req,res) 
     res.json(user)
+
 })
 module.exports = router;

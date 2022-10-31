@@ -22,7 +22,8 @@ const { config } = require("exceljs");
 
 require("./models/index")
 app.get("/",(req,res)=>{
-    res.send("Home page")
+    // res.send("Home page")
+    res.send(`<a href="/user/gets"> Export User Data on execl sheet</a>`);
 })
 app.use("/user",route)
 app.listen(port,()=>{
